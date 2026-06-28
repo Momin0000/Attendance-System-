@@ -1,22 +1,9 @@
-FROM python:3.11-slim
-
+FROM python:3.11-slim-bookworm
 WORKDIR /app
-
-RUN apt-get update && apt-get install -y \
-    gcc \
-    libpq-dev \
-    libzbar0 \
-    libzbar-dev \
-    wkhtmltopdf \
-    && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && apt-get install -y libpq-dev gcc && rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
 COPY . .
-
-RUN mkdir -p /app/storage/qrcodes /app/storage/photos /app/storage/idcards
-
+RUN mkdir -p storage/photos storage/qrcodes storage/idcards
 EXPOSE 8000
-
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
