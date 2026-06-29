@@ -123,12 +123,7 @@ export default function StudentDetailModal({ student, campuses, batches, courses
               className="btn-primary flex items-center gap-2 text-sm py-1.5 px-3">
               <CreditCard className="w-4 h-4" /> {generatingCard ? "Generating..." : "Generate ID Card"}
             </button>
-            {student.id_card_path && (
-              <a href={studentApi.downloadIdCard(student.id)} target="_blank" rel="noreferrer"
-                className="btn-secondary flex items-center gap-2 text-sm py-1.5 px-3">
-                <Download className="w-4 h-4" /> Download Card
-              </a>
-            )}
+
           </div>
         </div>
       </div>
