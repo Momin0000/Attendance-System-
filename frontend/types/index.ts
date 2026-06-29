@@ -21,6 +21,8 @@ export interface Campus {
   address?: string;
   phone?: string;
   is_active: boolean;
+  id_card_path?: string;
+  qr_code_path?: string;
 }
 
 export interface Course {
@@ -31,6 +33,8 @@ export interface Course {
   duration_months?: number;
   campus_id: number;
   is_active: boolean;
+  id_card_path?: string;
+  qr_code_path?: string;
 }
 
 export interface Batch {
@@ -41,6 +45,8 @@ export interface Batch {
   campus_id: number;
   course_id: number;
   is_active: boolean;
+  id_card_path?: string;
+  qr_code_path?: string;
 }
 
 export interface Student {
@@ -60,6 +66,8 @@ export interface Student {
   batch_id: number;
   enrollment_date: string;
   is_active: boolean;
+  id_card_path?: string;
+  qr_code_path?: string;
   created_at: string;
   campus?: Campus;
   course?: Course;
