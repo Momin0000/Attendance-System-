@@ -6,6 +6,8 @@ node_modules/
 .next/
 *.log
 storage/
-reports/
 uploads/
 .env.local
+reports/*.xlsx
+reports/*.pdf
+reports/*.csv
